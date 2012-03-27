@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xCarousel Demo</title>
+	<link type="text/css" rel="stylesheet" media="screen" href="css/style.css" ></link>
+	<script type="text/javascript" src="scripts/jquery1.7.0.min.js" ></script>
+	<script type="text/javascript" src="scripts/xcarousel.js" ></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('#ulcarousel').xcarousel();
+			
+			$('#btnLeft').bind('click', function(){
+				$('#ulcarousel').xcarousel('scrollLeft');
+			});
+			
+			$('#btnRight').bind('click', function(){
+				$('#ulcarousel').xcarousel('scrollRight');
+			});
+			
+		});
+	</script>
+</head>
+<body>
+
+	<div id="wrapper">	
+
+			<ul id="ulcarousel">
+				<li id="facebook">
+					<div class="idx">1</div>
+					<div class="box-1"></div>
+					<div class="box-2"></div>
+					<div class="box-3"></div>
+				</li>
+				<li>
+					<div class="idx">2</div>
+					<div class="box-1"></div>
+					<div class="box-2"></div>
+					<div class="box-3"></div>
+				</li>
+				<li>
+					<div class="idx">3</div>
+					<div class="box-1"></div>
+					<div class="box-2"></div>
+					<div class="box-3"></div>
+				</li>
+				<li>
+					<div class="idx">4</div>
+					<div class="box-1"></div>
+					<div class="box-2"></div>
+					<div class="box-3"></div>
+				</li>
+			</ul>
+
+		
+		
+		<div id="left-button">
+			<button class="button" id="btnLeft"><</button>
+		</div>
+		<div id="right-button">
+			<button class="button" id="btnRight">></button>
+		</div>
+		
+	</div>
+
+</body>
+</html>

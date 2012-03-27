@@ -1,0 +1,80 @@
+body{
+	padding: 100px 0 0 0;
+}
+
+.button{
+	width: 80px;
+	height: 80px;
+	font-size: 50px;
+}
+
+#left-button{
+	position: absolute;
+	top: 250px;
+	left: 10px;
+}
+
+#right-button{
+	position: absolute;
+	top: 250px;
+	right: 10px;
+}
+
+#wrapper{
+	margin: auto;
+	border: 1px solid #aaa;
+	height: 400px;
+	width: 1200px;
+	overflow: hidden;
+}
+#ulcarousel{
+	margin: auto;
+	padding: 0;
+	position: relative;
+	list-style: none;
+	float: left;
+	width:  100%;;
+	height: 400px;
+}
+#ulcarousel li{
+	float: left;
+	width: 800px;
+	height: 380px;
+	position: absolute;
+}
+
+.idx{
+	font-family: Arial, Tahoma, Serif;
+	font-size: 32pt;
+	position: absolute;
+	width: 800px;
+	height: 380px;
+}
+.box-1{
+	background: #fff;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 250px;
+	left: 350px;
+}
+.box-2{
+	background: #fff;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 100px;
+	left: 300px;
+}
+.box-3{
+	background: #fff;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 200px;
+	left: 200px;
+}
+
+#facebook{
+	background: url('../images/facebook/facebook-background.jpg');
+}
