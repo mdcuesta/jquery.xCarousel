@@ -3,9 +3,11 @@
 	var _carouselItems = new Array();
 	
 	var _settings = {
-		'scroll_duration'         	: 800,
-		'fall_duration'					: 300,
-		'reverse_fall_duration'	: 300		
+		'scroll_duration'       :800,
+		'fall_duration'			:300,
+		'reverse_fall_duration'	:300,
+		'bounce_duration'		:300,
+		'bouce_times'			:300
 		};
 	
 	var _carousel = null;
@@ -122,16 +124,30 @@
 			currentChild.animate(
 				{top: '+=' + getCarouselParent().height() + 'px'},
 				_settings.fall_duration, 
-					function(){
+					function(){		
+						if(children.length == 0)
+						{
+							currentChild.effect('bounce', {times: _settings.bounce_times}, _settings.bounce_duration,
+								function(){
+									if(children.length < 1)
+									{
+										if (typeof callback == "function")
+										{
+											callback();
+										}
+									}
+								}
+							);
+						}
+						else
+						{
+							currentChild.effect('bounce', {times: _settings.bounce_times}, _settings.bounce_duration);
+						}
+						
 						putDown(children, callback);
 					}
 			);
         }
-		else
-		{
-			if (typeof callback == "function")
-				callback();
-		}
 	}
 	
 	function elementsUp(item, callback){
@@ -190,8 +206,12 @@
 					decrementCurrent();
 					showFromLeft(getCarouselCurrentItem(),
 						function(){
-							elementsFall(getCarouselCurrentItem(), callback);
-							_isAnimating = 0;
+							elementsFall(getCarouselCurrentItem(), 
+							function(){
+								_isAnimating = 0;
+								if (typeof callback == "function")
+									callback();
+							});							
 						}
 					);
 				}
@@ -209,8 +229,13 @@
 					incrementCurrent();
 					showFromRight(getCarouselCurrentItem(), 
 						function(){
-							elementsFall(getCarouselCurrentItem(), callback);
-							_isAnimating = 0;
+							elementsFall(getCarouselCurrentItem(), 
+								function(){
+									_isAnimating = 0;
+									if (typeof callback == "function")
+										callback();
+								}
+							);							
 						}
 					);
 				}
