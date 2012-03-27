@@ -22,9 +22,8 @@ body{
 
 #wrapper{
 	margin: auto;
-	border: 1px solid #aaa;
 	height: 400px;
-	width: 1200px;
+	width: 100%;
 	overflow: hidden;
 }
 #ulcarousel{
@@ -38,17 +37,18 @@ body{
 }
 #ulcarousel li{
 	float: left;
-	width: 800px;
-	height: 380px;
+	width: 1000px;
+	height: 400px;
 	position: absolute;
 }
+
+
 
 .idx{
 	font-family: Arial, Tahoma, Serif;
 	font-size: 32pt;
 	position: absolute;
-	width: 800px;
-	height: 380px;
+
 }
 .box-1{
 	background: #fff;
@@ -75,6 +75,15 @@ body{
 	left: 200px;
 }
 
-#facebook{
-	background: url('../images/facebook/facebook-background.jpg');
+#item-1{
+	background: url('../images/back-1.jpg');
+}
+#item-2{
+	background: url('../images/back-2.jpg');
+}
+#item-3{
+	background: url('../images/back-3.jpg');
+}
+#item-4{
+	background: url('../images/back-4.jpg');
 }
