@@ -37,6 +37,8 @@
 	}
 	
 	function getCarouselItem(index){
+		if(index >= _carouselItems.length)
+			index = index % _carouselItems.length;
 		return _carouselItems[index];
 	}
 	
@@ -179,7 +181,64 @@
 		}
     }
 
+	function scrollItemsToLeft(items, callback){
+		if (items.length > 1) 
+		{
+			var currentItem = items.shift();			
+			currentItem.animate(
+					{left: -item.outerWidth() + "px"}
+					, _settings.scroll_duration);
+			
+			if(items.length == 0)
+			{
+				if (typeof callback == "function")
+					callback();
+				return;
+			}
+			nextItem = items[0];			
+			nextItem.animate(
+				{left: ((getCarouselParent().width() - nextItem.outerWidth()) / 2) + getCarouselParent().scrollLeft() + "px"}
+				, _settings.scroll_duration, 
+				function(){
+					scrollItemsToLeft(items, callback);
+				}
+			);
+        }	
+		else
+		{
+			if (typeof callback == "function")
+					callback();
+		}
+	}
 	
+	function scrollItemsToRight(items, callback){
+		if(items.length > 1)
+		{			
+			var currentItem = items.shift();			
+			currentItem.animate(
+					{left: getCarouselParent().width()+ "px"}
+					, _settings.scroll_duration);
+			if(items.length == 0)
+			{
+				if (typeof callback == "function")
+					callback();
+				return;
+			}
+			nextItem = items[0];			
+			nextItem.animate(
+				{left: ((getCarouselParent().width() - nextItem.outerWidth()) / 2) + getCarouselParent().scrollLeft() + "px"}
+				, _settings.scroll_duration, 
+				function(){
+					scrollItemsToRight(items, callback);
+				}
+			);
+		}
+		else
+		{
+			if (typeof callback == "function")
+					callback();
+		}
+	}
 	
 	/* End of Scrolling Functions */
 	
@@ -243,17 +302,79 @@
 		},
 		
 		scrollToIndex: function(index, callback) { 
-			if (typeof callback == "function")
-				callback();
+		
+			if(_isAnimating == 1)
+				return;
+			
+			_isAnimating = 1;
+			
+			index = index % _carouselItems.length;
+			if(_currentItem < index)
+			{
+				//go right
+				var carouselItems = [];
+				carouselItems.push(getCarouselCurrentItem());
+				
+				for(i = _currentItem + 1; i <= index; i++)
+				{					
+					item = getCarouselItem(i);
+					item.css("left",  getCarouselParent().width()  + "px");		
+					carouselItems.push(item);
+				}				
+				
+				elementsUp(getCarouselCurrentItem(), 
+					function(){
+						_currentItem = index;
+						scrollItemsToLeft(carouselItems, 
+							function(){
+								elementsFall(getCarouselCurrentItem(), 
+									function(){
+										_isAnimating = 0;
+										if (typeof callback == "function")
+											callback();
+									}
+								);						
+							}
+						);
+					}				
+				);
+				
+			}
+			else
+			{				
+				//go left
+				var carouselItems = [];
+				carouselItems.push(getCarouselCurrentItem());
+				
+				for(i = _currentItem - 1; i >= index; i--)
+				{					
+					item = getCarouselItem(i);
+					item.css("left",   -item.outerWidth() + "px");		
+					carouselItems.push(item);
+				}
+								
+				elementsUp(getCarouselCurrentItem(), 
+					function(){
+						_currentItem = index;
+						scrollItemsToRight(carouselItems, 
+							function(){
+								elementsFall(getCarouselCurrentItem(), 
+									function(){
+										_isAnimating = 0;
+										if (typeof callback == "function")
+											callback();
+									}
+								);						
+							}
+						);
+					}				
+				);
+			}
 		},
 		
-		fallDown: function(callback){
-		},
-		
-		fallUp: function(callback){
-		
+		getCurrentSlideIndex: function(){
+			return _currentItem;
 		}
-		
 	};
   
 	$.fn.xcarousel = function(method) {   

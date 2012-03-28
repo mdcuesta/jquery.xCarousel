@@ -1,24 +1,12 @@
 {
   "name": "plugins.jquery.com",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "author": "Michael Dela Cuesta",
-  "description": "...",
-  "homepage": "https://github.com/jquery/plugins.jquery.com",
+  "description": "A carousel with cool transition plugin for JQuery",
+  "homepage": "https://github.com/mdcuesta/jquery.xCarousel",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jquery/plugins.jquery.com.git"
+    "url": "git://github.com/mdcuesta/jquery.xCarousel.git"
   },
-  "main": "./src/main.js",
-  "dependencies": {
-    "mkdirp": "0.2.1",
-    "mysql": "0.9.5",
-    "semver": "1.0.12",
-    "sqlite3": "2.1.1",
-    "step": "0.0.5",
-    "rimraf": "1.0.9",
-    "node-syslog": "1.1.1"
-  },
-  "engines": {
-    "node": "0.6.5"
-  }
+  "main": "./src/xcarousel.js",
 }
