@@ -154,22 +154,23 @@
 	
 	function elementsUp(item, callback){
 		var children = [];
-		item.children().each(
-			function(){
-				children.push($(this));
-			}
-		);
+		var itemchildren = item.children();		
+		for(i = itemchildren.length - 1; i >= 0; i--)
+		{
+			children.push(itemchildren[i]);
+		}	
 		hideUp(children, callback);
 	}
 	
 	function hideUp(children, callback){
+		
 		if (children.length > 0) 
-		{
+		{			
 			var currentChild = children.shift();			
-			currentChild.animate(
+			$(currentChild).animate(
 				{top: '-=' + getCarouselParent().height() + 'px'},
 				_settings.reverse_fall_duration, 
-					function(){
+					function(){						
 						hideUp(children, callback);
 					}
 			);
