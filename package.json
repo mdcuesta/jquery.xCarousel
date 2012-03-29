@@ -1,6 +1,6 @@
 {
   "name": "plugins.jquery.com",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "Michael Dela Cuesta",
   "description": "A carousel with cool transition plugin for JQuery",
   "homepage": "https://github.com/mdcuesta/jquery.xCarousel",

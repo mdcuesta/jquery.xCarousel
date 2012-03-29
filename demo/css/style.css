@@ -24,7 +24,7 @@ body{
 	margin: auto;
 	height: 400px;
 	width: 100%;
-	overflow: hidden;
+	
 }
 #ulcarousel{
 	margin: auto;
@@ -32,14 +32,15 @@ body{
 	position: relative;
 	list-style: none;
 	float: left;
-	width:  100%;;
 	height: 400px;
+	width: 10000px;
 }
 #ulcarousel li{
+	display: inline;
+	list-style: none;
 	float: left;
 	width: 1000px;
 	height: 400px;
-	position: absolute;
 }
 
 #slide-track{
