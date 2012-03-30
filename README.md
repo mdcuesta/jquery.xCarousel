@@ -16,6 +16,8 @@ demo - demo application
 
 src - plugin source file
 
+#Demo
+[http://vahnpaper.herokuapp.com/demo/jquery/xcarousel](http://vahnpaper.herokuapp.com/demo/jquery/xcarousel)
 
 #Documentation
 
