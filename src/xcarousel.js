@@ -145,6 +145,10 @@
 		
 		getCurrentSlideIndex: function(){
 			return _currentItem;
+		},
+		
+		getCarouselItemCount: function(){
+			return _carouselItems.length;
 		}
 	};
   
