@@ -6,143 +6,197 @@
 	<script type="text/javascript" src="scripts/jquery-1.7.1.min.js"></script>	
 	<script type="text/javascript" src="scripts/xcarousel.min.js"></script>	
 	<script type="text/javascript">
-		$(document).ready(function(){
-			
+		$(document).ready(function(){	
 			$('#ulcarousel').xcarousel({
 				scroll_duration       :800,
 				fall_duration			:500,
 				reverse_fall_duration	:500				
 			});
 			
+			enableDisableButtons();
+			
 			$('#btnLeft').bind('click', function(){
-				$('#ulcarousel').xcarousel('scrollLeft');
+				$('#ulcarousel').xcarousel('scrollLeft',
+					function(){
+						enableDisableButtons();
+					}
+				);
 			});
 			
 			$('#btnRight').bind('click', function(){
-				$('#ulcarousel').xcarousel('scrollRight');
+				$('#ulcarousel').xcarousel('scrollRight',
+					function(){
+						enableDisableButtons();
+					}
+				);
 			});
 			
 			$('#btn1').bind('click', 
 				function(){
-					$('#ulcarousel').xcarousel('scrollToIndex', 0);			
+					$('#ulcarousel').xcarousel('scrollToIndex', 0, 
+						function(){
+							enableDisableButtons();
+						}
+					);			
 				}
 			);
 			
 			$('#btn2').bind('click', 
 				function(){
-					$('#ulcarousel').xcarousel('scrollToIndex', 1);			
+					$('#ulcarousel').xcarousel('scrollToIndex', 1,
+						function(){
+							enableDisableButtons();
+						}
+					);			
 				}
 			);
 			
 			$('#btn3').bind('click', 
 				function(){
-					$('#ulcarousel').xcarousel('scrollToIndex', 2);			
+					$('#ulcarousel').xcarousel('scrollToIndex', 2,
+						function(){
+							enableDisableButtons();
+						}
+					);			
 				}
 			);
 			
 			$('#btn4').bind('click', 
 				function(){
-					$('#ulcarousel').xcarousel('scrollToIndex', 3);			
+					$('#ulcarousel').xcarousel('scrollToIndex', 3,
+						function(){
+							enableDisableButtons();
+						}
+					);			
 				}
 			);
 			
 		});
+		
+		function enableDisableButtons(callback){
+			$('#slide-track').children('button').each(
+				function(){
+					$(this).attr("disabled", false);
+				}
+			);
+			
+			current = $('#ulcarousel').xcarousel('getCurrentSlideIndex');
+			if(current == 0)
+				$('#btn1').attr("disabled", true);
+			else if(current == 1)
+				$('#btn2').attr("disabled", true);
+			else if(current == 2)
+				$('#btn3').attr("disabled", true);
+			else if(current == 4)
+				$('#btn4').attr("disabled", true);
+				
+			if(typeof callback == "function")
+				callback();
+		}
 	</script>
 </head>
 <body>
 
 	<div id="wrapper">	
-
-			<ul id="ulcarousel">
+			<ul id="ulcarousel">			
 				<li id="item-1">
 					<div class="li-content">
-						<div id="item-1-1">
-							<img src="images/1/Desktop 2.png" />
+						<div style="position:absolute; left:-10px; top:180px;">
+							<img src="images/group-1/delicius_256.png" />
 						</div>
-						<div id="item-1-2">
-							<img src="images/1/Games 2.png" />
+						<div style="position:absolute; left:150px; top:50px;">
+							<img src="images/group-1/rss_256.png" />
 						</div>
-						<div id="item-1-3">
-							<img src="images/1/iOS Icons 2.png" />
+						<div style="position:absolute; left:350px; top:100px;">
+							<img src="images/group-1/facebook_256.png" />
 						</div>
-						<div id="item-1-4">
-							<img src="images/1/Sites 3.png" />
+						<div style="position:absolute; left:500px; top:30px;">
+							<img src="images/group-1/twitter_256.png" />
 						</div>
-						<div id="item-1-5">
-							<img src="images/1/Music 2.png" />
-						</div>		
+						<div style="position:absolute; left:780px; top:-20px;">
+							<img src="images/group-1/mail_256.png" />
+						</div>
+						<div style="position:absolute; left:650px; top:130px;">
+							<img src="images/group-1/stumbleup_256.png" />
+						</div>	
 					</div>
 				</li>
 				<li id="item-2">
 					<div class="li-content">
-						<div id="item-2-1">
-							<img src="images/1/System 3.png" />
+						<div style="position:absolute; left:-10px; top:100px;">
+							<img src="images/group-2/digg.png" />
 						</div>
-						<div id="item-2-2">
-							<img src="images/1/Torrents 2.png" />
+						<div style="position:absolute; left:250px; top:100px;">
+							<img src="images/group-2/stumble.png" />
 						</div>
-						<div id="item-2-3">
-							<img src="images/1/Burn 2.png" />
+						<div style="position:absolute; left:550px; top:20px;">
+							<img src="images/group-2/rss.png" />
 						</div>
-						<div id="item-2-4">
-							<img src="images/1/Dropbox 2.png" />
+						<div style="position:absolute; left:380px; top:150px;">
+							<img src="images/group-2/twitter.png" />
 						</div>
-						<div id="item-2-5">
-							<img src="images/1/Developer.png" />
+						
+						<div style="position:absolute; left:750px; top:100px;">
+							<img src="images/group-2/dellicious.png" />
 						</div>
 					</div>
 				</li>
 				<li id="item-3">
 					<div class="li-content">
-						<div id="item-3-1">
-							<img src="images/2/dribbble.png" />
+						<div style="position:absolute; left:-50px; top:100px;">
+							<img src="images/group-3/digg.png" />
 						</div>
-						<div id="item-3-2">
-							<img src="images/2/google_plus.png" />
+						<<div style="position:absolute; left:100px; top:20px;">
+							<img src="images/group-3/propeller.png" />
 						</div>
-						<div id="item-3-3">
-							<img src="images/2/tumblr_2.png" />
+						<div style="position:absolute; left:450px; top:20px;">
+							<img src="images/group-3/home.png" />
 						</div>
-						<div id="item-3-4">
-							<img src="images/2/soundcloud.png" />
-						</div>
-						<div id="item-3-5">
-							<img src="images/2/gowalla.png" />
+						<div style="position:absolute; left:250px; top:80px;">
+							<img src="images/group-3/facebook.png" />
+						</div>						
+						<div style="position:absolute; left:700px; top:100px;">
+							<img src="images/group-3/download.png" />
 						</div>
 					</div>
 				</li>
 				<li id="item-4">
 					<div class="li-content">
-						<div id="item-4-1">
-							<img src="images/4/adress book.png" />
+						<div style="position:absolute; left:0px; top:100px;">
+							<img src="images/group-4/delicious.png" />
 						</div>
-						<div id="item-4-2">
-							<img src="images/4/firefox.png" />
+						<div style="position:absolute; left:100px; top:200px;">
+							<img src="images/group-4/facebook.png" />
 						</div>
-						<div id="item-4-3">
-							<img src="images/4/headphone.png" />
+						<div style="position:absolute; left:300px; top:30px;">
+							<img src="images/group-4/google_buzz.png" />
 						</div>
-						<div id="item-4-4">
-							<img src="images/4/LoL.png" />
+						<div style="position:absolute; left:500px; top:0px;">
+							<img src="images/group-4/twitter.png" />
 						</div>
-						<div id="item-4-5">
-							<img src="images/4/chat.png" />
+						<div style="position:absolute; left:500px; top:150px;">
+							<img src="images/group-4/stumbleupon.png" />
+						</div>
+						<div style="position:absolute; left:600px; top:180px;">
+							<img src="images/group-4/flickr.png" />
+						</div>
+						<div style="position:absolute; left:400px; top:80px;">
+							<img src="images/group-4/tumblr.png" />
+						</div>
+						<div style="position:absolute; left:250px; top:130px;">
+							<img src="images/group-4/foursquare.png" />
 						</div>
 					</div>
 				</li>
-			</ul>
-
-		
-		
-		<div id="left-button">
-			<button class="button" id="btnLeft"><</button>
-		</div>
-		<div id="right-button">
-			<button class="button" id="btnRight">></button>
-		</div>
-		
+			</ul>		
 	</div>
 	
+	<div id="left-button">
+		<button class="button" id="btnLeft"><</button>
+	</div>
+	<div id="right-button">
+		<button class="button" id="btnRight">></button>
+	</div>	
 	<div id="slide-track">
 		<button id="btn1">1</button>
 		<button id="btn2">2</button>

@@ -1,5 +1,5 @@
 body{
-	padding: 100px 0 0 0;
+	
 }
 
 .button{
@@ -10,13 +10,13 @@ body{
 
 #left-button{
 	position: absolute;
-	top: 250px;
+	top: 150px;
 	left: 10px;
 }
 
 #right-button{
 	position: absolute;
-	top: 250px;
+	top: 150px;
 	right: 10px;
 }
 
@@ -24,6 +24,7 @@ body{
 	margin: auto;
 	height: 400px;
 	width: 100%;
+	position: relative;
 	overflow: hidden;	
 }
 #ulcarousel{
@@ -52,6 +53,7 @@ body{
 	text-align: center;
 	clear: both;
 	margin: auto;
+	padding-top: 50px;
 	width: 500px;
 }
 
@@ -66,107 +68,4 @@ body{
 }
 #item-4{
 	background: url('../images/back-4.jpg');
-}
-
-#item-1-1{
-	position: absolute;
-	top: 30px;
-	left: 20px;
-}
-#item-1-2{
-	position: absolute;
-	top: 80px;
-	left: 158px;
-}
-#item-1-3{
-	position: absolute;
-	top: 80px;
-	left: 296px;
-}
-#item-1-4{
-	position: absolute;
-	top: 170px;
-	left: 434px;
-}
-#item-1-5{
-	position: absolute;
-	top: 50px;
-	left: 572px;
-}
-#item-2-1{
-	position: absolute;
-	top: 100px;
-	left: 710px;
-}
-#item-2-2{
-	position: absolute;
-	top: 200px;
-	left: 848px;
-}
-#item-2-3{
-	position: absolute;
-	top: 210px;
-	left: 10px;
-}
-#item-2-4{
-	position: absolute;
-	top: 280px;
-	left: 148px;
-}
-#item-2-5{
-	position: absolute;
-	top: 286px;
-	left: 700px;
-}
-
-#item-3-1{
-	position: absolute;
-	top: 30px;
-	left: 20px;
-}
-#item-3-2{
-	position: absolute;
-	top: 80px;
-	left: 158px;
-}
-#item-3-3{
-	position: absolute;
-	top: 80px;
-	left: 296px;
-}
-#item-3-4{
-	position: absolute;
-	top: 170px;
-	left: 434px;
-}
-#item-3-5{
-	position: absolute;
-	top: 50px;
-	left: 572px;
-}
-
-#item-4-1{
-	position: absolute;
-	top: 100px;
-	left: 710px;
-}
-#item-4-2{
-	position: absolute;
-	top: 200px;
-	left: 848px;
-}
-#item-4-3{
-	position: absolute;
-	top: 210px;
-	left: 10px;
-}
-#item-4-4{
-	position: absolute;
-	top: 280px;
-	left: 148px;
-}
-#item-4-5{
-	position: absolute;
-	top: 286px;
-	left: 700px;
 }
