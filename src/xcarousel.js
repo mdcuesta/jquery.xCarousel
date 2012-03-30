@@ -167,9 +167,7 @@
 	var _settings = {
 		'scroll_duration'       :600,
 		'fall_duration'			:500,
-		'reverse_fall_duration'	:500,
-		'bounce_duration'		:300,
-		'bouce_times'			:300
+		'reverse_fall_duration'	:500
 		};
 	
 	var _carousel = null;

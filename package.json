@@ -2,11 +2,13 @@
   "name": "plugins.jquery.com",
   "version": "1.0.0",
   "author": "Michael Dela Cuesta",
+  "email": "michael.dcuesta@gmail.com",
   "description": "A carousel with cool transition plugin for JQuery",
   "homepage": "https://github.com/mdcuesta/jquery.xCarousel",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mdcuesta/jquery.xCarousel.git"
+    "url": "git://github.com/mdcuesta/jquery.xCarousel.git",
+	"wiki": "https://github.com/mdcuesta/jquery.xCarousel/wiki"
   },
   "main": "./src/xcarousel.js",
 }

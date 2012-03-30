@@ -8,7 +8,11 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			
-			$('#ulcarousel').xcarousel();
+			$('#ulcarousel').xcarousel({
+				scroll_duration       :800,
+				fall_duration			:500,
+				reverse_fall_duration	:500				
+			});
 			
 			$('#btnLeft').bind('click', function(){
 				$('#ulcarousel').xcarousel('scrollLeft');
