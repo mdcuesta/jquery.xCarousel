@@ -1,0 +1,2 @@
+## xCarousel
+jQuery carousel Plugin
