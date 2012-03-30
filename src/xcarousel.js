@@ -27,10 +27,7 @@
 			{
 				getCarouselFirstItem().before(getCarouselLastItem());
 				getCarousel().css("left", "-=" + getCarouselParent().width() + "px");
-			}
-			
-			getCarouselFirstItem().before(getCarouselLastItem());
-			getCarousel().css("left", "-=" + getCarouselParent().width() + "px");
+			}			
 			elementsUp(getCarouselCurrentItem().children(),
 				function(){					
 					getCarousel().animate({left: "+=" +getCarouselParent().width() + "px"}, _settings.scroll_duration,
@@ -67,8 +64,6 @@
 							incrementCurrent();
 							elementsFall(getCarouselCurrentItem().children(), 
 								function(){
-									getCarouselLastItem().after(getCarouselFirstItem());
-									getCarousel().css("left", "+=" + getCarouselParent().width() + "px");
 									_isAnimating = 0;
 									if (typeof callback == "function")
 										callback();
