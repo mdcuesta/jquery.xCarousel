@@ -1,5 +1,4 @@
-## xCarousel
-jQuery carousel Plugin
+xCarousel - jQuery carousel Plugin
 
 Author: Michael Dela Cuesta
 
@@ -10,7 +9,8 @@ Source: https://github.com/mdcuesta/jquery.xCarousel
 Email: michael.dcuesta@gmail.com
 
 
-## Folders
+Folders
 
 demo - demo application
+
 src - plugin source file
