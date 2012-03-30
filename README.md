@@ -13,4 +13,5 @@ Email: michael.dcuesta@gmail.com
 ## Folders
 
 demo - demo application
+
 src - plugin source file
