@@ -76,7 +76,10 @@
 		},
 		
 		scrollToIndex: function(index, callback) { 
-		
+			
+			if(index < 0 || index >= _carouselItems.length)
+				return;
+				
 			if(_isAnimating == 1)
 				return;
 			
