@@ -147,6 +147,23 @@
 		
 		getCarouselItemCount: function(){
 			return _carouselItems.length;
+		},
+		
+		fixSlideItemsWidth: function(callback){
+		
+			while(getCarouselFirstItem().get(0) != getCarouselCurrentItem().get(0))
+			{
+				getCarouselLastItem().after(getCarouselFirstItem());
+			}
+			
+			getCarousel().children().each(
+				function(){
+					$(this).css("width", getCarouselParent().width() + "px");
+				}
+			);
+			
+			getCarousel().css("left", "0px");
+			
 		}
 	};
   
