@@ -1,14 +1,22 @@
 {
-  "name": "plugins.jquery.com",
-  "version": "1.0.0",
-  "author": "Michael Dela Cuesta",
-  "email": "michael.dcuesta@gmail.com",
+  "name": "xcarousel",
+  "title": "jQuery xCarousel",
   "description": "A carousel with cool transition plugin for JQuery",
-  "homepage": "https://github.com/mdcuesta/jquery.xCarousel",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mdcuesta/jquery.xCarousel.git",
-	"wiki": "https://github.com/mdcuesta/jquery.xCarousel/wiki"
+  "keywords": [ 
+	"carousel", 
+	"slider", 
+	"animation"
+  ],
+  "version": "1.0.0",
+  "author": {
+	"name": "Michael Dela Cuesta",
+	"url": "http://vahnpaper.apphb.com"
   },
-  "main": "./src/xcarousel.js",
+  "licenses": [{
+        "type": "MIT",
+        "url": "http://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"}],\
+  "bugs": "https://github.com/mdcuesta/jquery.xCarousel/issues",  
+  "homepage": "https://github.com/mdcuesta/jquery.xCarousel",
+  "docs": "https://github.com/mdcuesta/jquery.xCarousel/wiki",  
+  "demo": "http://xcarousel.herokuapp.com/"
 }
