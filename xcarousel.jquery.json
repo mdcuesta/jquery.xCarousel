@@ -13,10 +13,14 @@
 	"url": "http://vahnpaper.apphb.com"
   },
   "licenses": [{
-        "type": "MIT",
-        "url": "http://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"}],\
+    "type": "MIT",
+    "url": "http://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"}
+  ],
   "bugs": "https://github.com/mdcuesta/jquery.xCarousel/issues",  
   "homepage": "https://github.com/mdcuesta/jquery.xCarousel",
   "docs": "https://github.com/mdcuesta/jquery.xCarousel/wiki",  
-  "demo": "http://xcarousel.herokuapp.com/"
+  "demo": "http://xcarousel.herokuapp.com/",
+  "dependencies": {
+    "jquery": ">=1.5"
+  }
 }
